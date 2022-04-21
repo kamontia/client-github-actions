@@ -1,3 +1,0 @@
-[submodule ".github"]
-	path = .github
-	url = git@github.com:kamontia/share-actions.git
