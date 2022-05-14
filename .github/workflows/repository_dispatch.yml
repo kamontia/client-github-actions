@@ -8,6 +8,7 @@ on:
 jobs:
   sandbox:
     runs-on: ubuntu-latest
+    container: python:3.10.4
     services:
       python:
         image: python:3.10.4
