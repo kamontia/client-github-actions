@@ -2,8 +2,7 @@ name: repository_dispatch
 
 on:
   repository_dispatch:
-    types: 
-      - trigger
+    types: [trigger]
 
 jobs:
   sandbox1:
