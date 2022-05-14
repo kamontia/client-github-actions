@@ -11,6 +11,11 @@ jobs:
     container: python:3.10.4
 
     steps:
+      - name: Check client_payload
+        run : |
+          pwd
+          ls -al
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
