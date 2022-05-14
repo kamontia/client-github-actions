@@ -1,0 +1,14 @@
+name: repository_dispatch
+
+on:
+  repository_dispatch:
+    types: 
+      - trigger
+
+jobs:
+  sandbox1:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          MESSAGE: ${{ github.event.client_payload.message }}
+        run: echo $MESSAGE
