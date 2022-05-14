@@ -2,12 +2,27 @@ name: repository_dispatch
 
 on:
   repository_dispatch:
-    types: [trigger]
+    types: 
+      - trigger
 
 jobs:
   sandbox1:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.10.4
     steps:
-      - env:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check client_payload
+        env:
           MESSAGE: ${{ github.event.client_payload.message }}
-        run: echo $MESSAGE
+          MESSAGE_ARRAY: ${{ join(github.event.client_payload.message_array,',') }}
+        run: |
+          echo $MESSAGE
+          echo $MESSAGE_ARRAY
+          pwd
+          ls -l
+          python3 script/main.py $MESSAGE
+
+
