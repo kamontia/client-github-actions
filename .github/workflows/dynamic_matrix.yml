@@ -12,7 +12,7 @@ jobs:
       - name: "build-matrix" 
         id: set-matrix
         run: |
-          matrix=$(cat script/apps.json| jq -r -c '.apps|map(.target)|flatten|unique'| jq tostring)
+          matrix=$(cat script/apps.json| jq -c '.apps|map(.target)|flatten|unique')
           echo ${matrix}
           echo '::set-output name=build_target::${matrix}'
     outputs:
