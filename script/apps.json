@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "name": "app1",
+      "repository": "kamontia/app1",
+      "enable": true,
+      "target": [
+        "UBUNTU",
+        "debian",
+        "centos"
+      ]
+    },
+    {
+      "name": "app2",
+      "repository": "kamontia/app2",
+      "enable": true,
+      "target": [
+        "debian",
+        "centos"
+      ]
+    }
+  ]
+}

@@ -33,8 +33,9 @@ jobs:
           id: set-matrix
           run: |
             echo '["hoge","fuga"]' | jq -c
-            list=$(echo '["hoge","fuga"]' | jq -c)
-            echo "::set-output name=value::${list}"
+            # list=$(echo '["hoge","fuga"]' | jq -c)
+            source script/script.sh
+            echo "::set-output name=value::${$FETCH_APPS}"
 
   execute:
     needs: set-matrix
